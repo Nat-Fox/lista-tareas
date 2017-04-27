@@ -1202,11 +1202,23 @@ var user = [{
 
 
 document.write('<div> <h1> La lista de tareas es: </h1></div>');
+var newArray = [];
 for (var i = 0; i < 10; i++) {
-    document.write('<div><div><ul> <li> ' + user[i].title + '</li></ul></div>');
+    newArray.push(user[i].title);
 }
 
+function primerasDiez() {
+    //dibujar con inner?    
+    for (var j = 0; j < newArray.length; j++) {
+        document.write('<div><div><ul> <li> ' + newArray[j] + '</li></ul></div>');
+    }
+
+}
+
+primerasDiez();
+
 function mostrar() {
+
     //obteniendo el valor del campo input con id agregar-tarea
     console.log(document.getElementById('agregar-tarea').value);
     var escribir = document.getElementById('agregar-tarea').value;
