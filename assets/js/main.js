@@ -1200,28 +1200,52 @@ var user = [{
     }
 ];
 
-
-document.write('<div> <h1> La lista de tareas es: </h1></div>');
+//agregar a un arreglo las primeras 10 tareas
 var newArray = [];
 for (var i = 0; i < 10; i++) {
     newArray.push(user[i].title);
 }
 
-function primerasDiez() {
-    //dibujar con inner?    
-    for (var j = 0; j < newArray.length; j++) {
-        document.write('<div><div><ul> <li> ' + newArray[j] + '</li></ul></div>');
-    }
+//con esta funcon se dibujan las 10 primeras tareas 
+function dibujarContenido() {
+    var listaTareas = document.getElementById('lista-tareas');
+    listaTareas.innerHTML = '';
+    var nuevoHtml = '';
+    newArray.forEach(function(tarea) {
+        //ver cada una de las tareas
+        console.log(tarea);
+        nuevoHtml += '<li>' + tarea + '</li>';
+    });
 
+    listaTareas.innerHTML = nuevoHtml;
 }
 
-primerasDiez();
+dibujarContenido();
 
-function mostrar() {
 
-    //obteniendo el valor del campo input con id agregar-tarea
-    console.log(document.getElementById('agregar-tarea').value);
-    var escribir = document.getElementById('agregar-tarea').value;
-    document.getElementById('mostrar').innerHTML = escribir;
 
-}
+
+// document.write('<div> <h1> La lista de tareas es: </h1></div>');
+// var newArray = [];
+// for (var i = 0; i < 10; i++) {
+//     newArray.push(user[i].title);
+// }
+
+// function primerasDiez() {
+//     //dibujar con inner?    
+//     for (var j = 0; j < newArray.length; j++) {
+//         document.write('<div><div><ul> <li> ' + newArray[j] + '</li></ul></div>');
+//     }
+
+// }
+
+// primerasDiez();
+
+// function mostrar() {
+
+//     //obteniendo el valor del campo input con id agregar-tarea
+//     console.log(document.getElementById('agregar-tarea').value);
+//     var escribir = document.getElementById('agregar-tarea').value;
+//     document.getElementById('mostrar').innerHTML = escribir;
+
+// }
