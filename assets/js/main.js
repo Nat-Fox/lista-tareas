@@ -1205,3 +1205,11 @@ document.write('<div> <h1> La lista de tareas es: </h1></div>');
 for (var i = 0; i < 10; i++) {
     document.write('<div><div><ul> <li> ' + user[i].title + '</li></ul></div>');
 }
+
+function mostrar() {
+    //obteniendo el valor del campo input con id agregar-tarea
+    console.log(document.getElementById('agregar-tarea').value);
+    var escribir = document.getElementById('agregar-tarea').value;
+    document.getElementById('mostrar').innerHTML = escribir;
+
+}
