@@ -1246,5 +1246,6 @@ function agregarNuevaTarea() {
 
 function modificarTarea() {
     var input = document.getElementById('nueva-tarea').value;
+    console.log(input);
     console.log('el valor actual de la tarea a modificar es ', input)
 }
