@@ -1,0 +1,20 @@
+.button {
+    background-color: #669999;
+    border: none;
+    color: white;
+    padding: 2px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 1px;
+    cursor: pointer;
+}
+
+.titulo {
+    color: #35B39C;
+}
+
+.lista {
+    color: #696969;
+}

@@ -2,31 +2,40 @@
 <html lang="en">
 
 <head>
-    <title></title>
+    <title>Lista de Tareas</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- 
+    <h1 class="titulo"> Lista de Tareas </h1>
+
+    <div>
+        <!-- Para agregar la nueva tarea a una lista -->
+        <div class="lista">
+            <ul id="lista-tareas">
+            </ul>
+        </div>
+
+        <!-- 
         Input para recibir la nueva tarea y agregarla con el botón "Añadir tarea" para luego 
         mostrarla con el evento onclick que se desarrolla en el js
-    -->
-    <div>
-        <input id="nueva-tarea" type="" name="" value="">
+        -->
+        <div>
+            <input id="nueva-tarea" type="" name="" value="">
 
-        <button type="button" onclick="agregarNuevaTarea();">
+            <button type="button" class="button" onclick="agregarNuevaTarea();">
             Añadir tarea
         </button>
-    </div>
+        </div>
 
-    <!-- Para agregar la nueva tarea a una lista -->
-    <div>
-        <ul id="lista-tareas">
-        </ul>
-    </div>
+        <div>
+            <br>
+            <img src="assets/img/checklistpapa.png" alt="">
+        </div>
 
+    </div>
 
     <script src="assets/js/main.js"></script>
 </body>

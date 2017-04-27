@@ -1201,51 +1201,45 @@ var user = [{
 ];
 
 //agregar a un arreglo las primeras 10 tareas
-var newArray = [];
-for (var i = 0; i < 10; i++) {
-    newArray.push(user[i].title);
-}
+//slice corta el arreglo
+var newArray = user.slice(0, 10);
 
-//con esta funcon se dibujan las 10 primeras tareas 
-function dibujarContenido() {
+// for (var i = 0; i < 10; i++) {
+//     console.log(user[i].title);
+//     newArray.push(user[i].title);
+// }
+
+//con esta funcion se dibujan las 10 primeras tareas 
+function dibujar() {
     var listaTareas = document.getElementById('lista-tareas');
+    //usamos inner para escribir en el HTML
     listaTareas.innerHTML = '';
     var nuevoHtml = '';
     newArray.forEach(function(tarea) {
         //ver cada una de las tareas
         console.log(tarea);
-        nuevoHtml += '<li>' + tarea + '</li>';
+        nuevoHtml += '<li>' + tarea.title + '</li>';
     });
 
     listaTareas.innerHTML = nuevoHtml;
 }
 
-dibujarContenido();
+dibujar();
 
+//agregar una nueva tarea
+function agregarNuevaTarea() {
+    //tomamos el valor del input ingresado del id 'nueva-tarea' 
+    var input = document.getElementById('nueva-tarea').value;
+    var textoNuevaTarea = input;
 
+    //vamos agregando al array las nuevas tareas ingresadas por el usuario con el mismo formato con el que vienen en el json
+    newArray.push({
+        'userId': 10,
+        'title': textoNuevaTarea,
+        'completed': false
+    });
 
-
-// document.write('<div> <h1> La lista de tareas es: </h1></div>');
-// var newArray = [];
-// for (var i = 0; i < 10; i++) {
-//     newArray.push(user[i].title);
-// }
-
-// function primerasDiez() {
-//     //dibujar con inner?    
-//     for (var j = 0; j < newArray.length; j++) {
-//         document.write('<div><div><ul> <li> ' + newArray[j] + '</li></ul></div>');
-//     }
-
-// }
-
-// primerasDiez();
-
-// function mostrar() {
-
-//     //obteniendo el valor del campo input con id agregar-tarea
-//     console.log(document.getElementById('agregar-tarea').value);
-//     var escribir = document.getElementById('agregar-tarea').value;
-//     document.getElementById('mostrar').innerHTML = escribir;
-
-// }
+    textoNuevaTarea = '';
+    //volvemos a dibujar el contenido ahora actualizado
+    dibujar();
+}
