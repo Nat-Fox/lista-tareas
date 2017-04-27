@@ -1243,3 +1243,8 @@ function agregarNuevaTarea() {
     //volvemos a dibujar el contenido ahora actualizado
     dibujar();
 }
+
+function modificarTarea() {
+    var input = document.getElementById('nueva-tarea').value;
+    console.log('el valor actual de la tarea a modificar es ', input)
+}
